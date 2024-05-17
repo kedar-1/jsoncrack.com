@@ -14,7 +14,8 @@ import {
   List,
   Anchor,
 } from "@mantine/core";
-import { IoIosCheckmarkCircle, IoMdArrowForward } from "react-icons/io";
+import { IoMdArrowForward } from "react-icons/io";
+import { MdCheck } from "react-icons/md";
 import { gaEvent } from "src/lib/utils/gaEvent";
 import { PRICING } from "src/pages/pricing";
 import useUser from "src/store/useUser";
@@ -27,10 +28,10 @@ const overlayLinks = {
 };
 
 export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
-  const [plan, setPlan] = React.useState("monthly");
-  const user = useUser(state => state.user);
   const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
+  const [plan, setPlan] = React.useState("monthly");
+  const user = useUser(state => state.user);
 
   const handleSelect = () => {
     const link = new URL(overlayLinks[plan]);
@@ -48,8 +49,6 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
   };
 
   const getBorderColor = (value: string) => {
-    console.log(colorScheme);
-
     if (plan === value) return theme.colors.blue[6];
     if (colorScheme === "dark") return theme.colors.gray[7];
     return theme.colors.gray[2];
@@ -73,7 +72,14 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
         improve your workflow.
       </Text>
 
-      <Radio.Group value={plan} onChange={setPlan} mt="md" label="Select your plan" size="md">
+      <Radio.Group
+        color="indigo"
+        value={plan}
+        onChange={setPlan}
+        mt="md"
+        label="Select your plan"
+        size="md"
+      >
         <Flex gap="xs" mt="sm" align="center" justify="space-between">
           <Paper
             flex="1"
@@ -102,7 +108,7 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
           >
             <Flex justify="space-between">
               <Radio value="annual" label="Annual" size="xs" />
-              <Badge variant="light" color="blue" size="xs" radius="sm">
+              <Badge variant="light" color="indigo" size="xs" radius="sm">
                 Save 16%
               </Badge>
             </Flex>
@@ -116,13 +122,7 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
       <List
         fz="sm"
         lts={0.2}
-        icon={
-          <IoIosCheckmarkCircle
-            color={theme.colors.dark[2]}
-            size={20}
-            style={{ verticalAlign: "middle" }}
-          />
-        }
+        icon={<MdCheck color="#5199FF" size={20} style={{ verticalAlign: "middle" }} />}
       >
         <List.Item>Compact Graph Visualization (50% less nodes)</List.Item>
         <List.Item>Improved Performance 4X Faster</List.Item>
@@ -148,8 +148,8 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
             /mo (billed {plan === "monthly" ? "monthly" : "annually"})
           </Text>
         </Flex>
-        <Button onClick={handleSelect} color="blue" rightSection={<IoMdArrowForward />}>
-          Upgrade to Pro
+        <Button onClick={handleSelect} color="indigo" rightSection={<IoMdArrowForward />}>
+          Upgrade
         </Button>
       </Flex>
     </Modal>

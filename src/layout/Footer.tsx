@@ -20,14 +20,14 @@ export const Footer = () => {
   return (
     <Container mt={150}>
       <Stack align="center">
-        <Title c="black" order={3}>
-          Get Started with JSON Crack
+        <Title fz={26} c="gray.7" lts={-1} order={3} ta="center">
+          Designed for everyone
+          <br />
+          Save time understanding your data.
         </Title>
-        <Text fz="lg" c="dimmed">
-          Designed for everyone, save time understanding your data.
-        </Text>
+
         <Button
-          color="dark"
+          variant="gradient"
           component={Link}
           prefetch={false}
           href="/pricing"
@@ -37,7 +37,7 @@ export const Footer = () => {
           Get Started
         </Button>
       </Stack>
-      <Divider my={60} />
+      <Divider my={60} color="gray.3" />
       <Flex justify="space-between">
         <Stack gap={4} visibleFrom="sm">
           <JSONCrackLogo />
@@ -52,13 +52,21 @@ export const Footer = () => {
             </Text>
             <Anchor
               fz="sm"
-              c="dark"
+              c="black"
               href="https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode"
             >
               VS Code
             </Anchor>
-            <Anchor component={Link} prefetch={false} fz="sm" c="dark" href="/pricing">
+            <Anchor component={Link} prefetch={false} fz="sm" c="black" href="/pricing">
               Pricing
+            </Anchor>
+            <Anchor
+              href="https://github.com/AykutSarac/jsoncrack.com"
+              fz="sm"
+              c="black"
+              target="_blank"
+            >
+              Open Source
             </Anchor>
           </Stack>
           <Stack gap="xs">
@@ -67,16 +75,16 @@ export const Footer = () => {
             </Text>
             <Anchor
               fz="sm"
-              c="dark"
+              c="black"
               href="https://herowand.lemonsqueezy.com/affiliates"
               target="_blank"
             >
               Affiliate
             </Anchor>
-            <Anchor component={Link} prefetch={false} fz="sm" c="dark" href="/#faq">
+            <Anchor component={Link} prefetch={false} fz="sm" c="black" href="/#faq">
               FAQ
             </Anchor>
-            <Anchor component={Link} prefetch={false} fz="sm" c="dark" href="/docs">
+            <Anchor component={Link} prefetch={false} fz="sm" c="black" href="/docs">
               Docs
             </Anchor>
           </Stack>
@@ -87,29 +95,29 @@ export const Footer = () => {
             <Flex gap="xs">
               <Anchor
                 aria-label="LinkedIn"
-                fz="sm"
                 href="https://www.linkedin.com/company/herowand"
+                fz="sm"
               >
-                <ThemeIcon variant="transparent" color="dark">
+                <ThemeIcon variant="transparent" color="black">
                   <FaLinkedin size={20} />
                 </ThemeIcon>
               </Anchor>
               <Anchor aria-label="X" fz="sm" href="https://twitter.com/jsoncrack">
-                <ThemeIcon variant="transparent" color="dark">
+                <ThemeIcon variant="transparent" color="black">
                   <FaXTwitter size={20} />
                 </ThemeIcon>
               </Anchor>
               <Anchor
                 aria-label="GitHub"
-                fz="sm"
                 href="https://github.com/AykutSarac/jsoncrack.com"
+                fz="sm"
               >
-                <ThemeIcon variant="transparent" color="dark">
+                <ThemeIcon variant="transparent" color="black">
                   <FaGithub size={20} />
                 </ThemeIcon>
               </Anchor>
               <Anchor aria-label="Discord" fz="sm" href="https://discord.com/invite/yVyTtCRueq">
-                <ThemeIcon variant="transparent" color="dark">
+                <ThemeIcon variant="transparent" color="black">
                   <FaDiscord size={20} />
                 </ThemeIcon>
               </Anchor>
