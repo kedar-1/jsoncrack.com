@@ -30,8 +30,8 @@ const overlayLinks = {
 export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
   const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
-  const [plan, setPlan] = React.useState("monthly");
   const user = useUser(state => state.user);
+  const [plan, setPlan] = React.useState("monthly");
 
   const handleSelect = () => {
     const link = new URL(overlayLinks[plan]);
@@ -67,17 +67,11 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
       onClose={onClose}
       zIndex={202}
     >
-      <Text fz="sm" ta="center" c="gray.6">
-        Do you work with data on a daily basis? Upgrade to Pro and unlock advanced features to
-        improve your workflow.
-      </Text>
-
       <Radio.Group
         color="indigo"
         value={plan}
         onChange={setPlan}
-        mt="md"
-        label="Select your plan"
+        label="Select your plan:"
         size="md"
       >
         <Flex gap="xs" mt="sm" align="center" justify="space-between">
@@ -116,7 +110,7 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
         </Flex>
       </Radio.Group>
 
-      <Text mt="lg" fz="sm" fw="bold" mb="xs">
+      <Text mt="md" fz="sm" fw="bold" mb="xs">
         What You Get
       </Text>
       <List
@@ -124,9 +118,10 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
         lts={0.2}
         icon={<MdCheck color="#5199FF" size={20} style={{ verticalAlign: "middle" }} />}
       >
-        <List.Item>Compact Graph Visualization (50% less nodes)</List.Item>
-        <List.Item>Improved Performance 4X Faster</List.Item>
-        <List.Item>Compare Data</List.Item>
+        <List.Item>500% Larger data size support (~4 MB)</List.Item>
+        <List.Item>400% Better performance</List.Item>
+        <List.Item>50% Less Nodes & Compact Graph Visualization</List.Item>
+        <List.Item>Compare Data on Graphs</List.Item>
         <List.Item>Edit on Graphs</List.Item>
         <List.Item>
           <Anchor c="gray" fz="sm" href="/#preview" target="_blank">

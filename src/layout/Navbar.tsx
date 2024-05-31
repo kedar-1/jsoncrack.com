@@ -56,7 +56,18 @@ export const Navbar = () => {
           </Button>
           <Button
             component={Link}
-            href="/pricing"
+            href="/premium"
+            variant="subtle"
+            color="black"
+            radius="md"
+            visibleFrom="sm"
+            size="md"
+          >
+            Premium
+          </Button>
+          <Button
+            component={Link}
+            href="/premium#pricing"
             variant="subtle"
             color="black"
             radius="md"
@@ -106,9 +117,10 @@ export const Navbar = () => {
           </Button>
           <Button
             variant="gradient"
+            style={{ border: "1px solid #625BF6" }}
             component={Link}
             prefetch={false}
-            href="/pricing"
+            href="/#pricing"
             visibleFrom="sm"
             radius="lg"
             size="md"

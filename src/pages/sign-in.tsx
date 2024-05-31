@@ -155,10 +155,9 @@ const SignIn = () => {
 
     if (query?.access_token && query?.refresh_token) {
       (async () => {
-        const { data, error } = await supabase.auth.setSession({
-          access_token: query.access_token as string,
-          refresh_token: query.refresh_token as string,
-        });
+        const refresh_token = query.refresh_token as string;
+        const access_token = query.access_token as string;
+        const { data, error } = await supabase.auth.setSession({ refresh_token, access_token });
 
         if (error) return toast.error(error.message);
         if (data.session) setSession(data.session);
